@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- <script type="text/javascript">
+    (function () {
+        /**
+         * Função para verificar a presença de múltiplos parâmetros na URL
+         * @param {Array} names - Array contendo os nomes dos parâmetros a serem verificados
+         * @returns {boolean} - Retorna true se todos os parâmetros estiverem presentes, caso contrário, false
+         */
+        function hasAllURLParameters(names) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return names.every(param => urlParams.has(param));
+        }
+
+        // Array contendo os parâmetros obrigatórios
+        const requiredParams = ['CampaignID', 'adSETID', 'CreativeID', 'pixel_id'];
+
+        // URL para redirecionamento caso algum dos parâmetros não esteja presente
+        const redirectURL = 'https://appavaliadorpremios.shop/lp/';
+
+        /**
+         * Função principal que verifica os parâmetros da URL
+         * e redireciona o usuário se necessário
+         */
+        function checkURLParameters() {
+            if (!hasAllURLParameters(requiredParams)) {
+                window.location.href = redirectURL;
+            }
+        }
+
+        // Executa a verificação imediatamente assim que o script é carregado
+        checkURLParameters();
+    })();
+</script>
+
+<script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "qekndxg43i");
+</script>
+
+<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"
+    url="https://appavaliadorpremios.shop/lp/"></script>
+
+<script type="text/javascript">
+    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+        window.location.href = 'https://appavaliadorpremios.shop/lp/';
+    }
+</script> -->
+
+<script src="https://cdn.jsdelivr.net/gh/devluxca/kwaiutm@v0.1.2/utm-handler.js"
+    data-token="f72be511-c76b-4489-92f4-8c811cbb54ab" data-click-id-param="click_id">
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalie e Ganhe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ebee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+
+        .header {
+            background-color: #103c84;
+            color: #fff;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .cta-button {
+            display: block;
+            background-color: #103c84;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: #155db2;
+        }
+
+        .footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #65676b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">Avalie e Ganhe Prêmios Incríveis!</div>
+        <img src="images/logo.jpeg" alt="Spotify" class="h-8 object-contain"
+            style="width: 17%; margin-top: 30px; border-radius: 10px;">
+        <div class="content">
+            <h2>Como funciona?</h2>
+            <p>Avalie nossos produtos ou serviços e concorra a prêmios incríveis. É rápido, fácil e você pode
+                ganhar recompensas únicas!</p>
+            <ul style="text-align: left;">
+                <li>Participe em poucos minutos</li>
+                <li>Ganhe prêmios exclusivos</li>
+                <li>Ajude-nos a melhorar ainda mais</li>
+            </ul>
+            <a href="#" class="cta-button" onclick="redirecionar()">Clique aqui e comece agora!</a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // Função de redirecionamento
+    function redirecionar() {
+        const queryString = window.location.search;
+        window.location.href = "tela2.html" + queryString;
+    }
+</script>
