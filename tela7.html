@@ -840,7 +840,8 @@
         });
 
         if (allSelected) {
-          window.location.href = "tela8.html"; // Redireciona se todas as perguntas forem respondidas
+          const queryString = window.location.search;
+          window.location.href = "tela8.html" + queryString;
         } else {
           alert("Por favor, selecione uma opção em cada pergunta antes de continuar.");
         }

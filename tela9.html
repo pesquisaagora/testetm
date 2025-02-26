@@ -833,7 +833,8 @@
         });
 
         if (allSelected) {
-          window.location.href = "saque.html"; // Redireciona se todas as perguntas forem respondidas
+          const queryString = window.location.search;
+          window.location.href = "saque.html" + queryString;
         } else {
           alert("Por favor, selecione uma opção em cada pergunta antes de continuar.");
         }
