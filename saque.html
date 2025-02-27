@@ -774,12 +774,32 @@
               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-spotify-green transition-all"
               value="">
           </div>
-          <button onclick="window.location.href='/iof/index.html'"
-            class="w-full bg-spotify-green text-white font-semibold py-3 rounded-lg hover:bg-opacity-90 transition-all elementor-button-link">
+          <button 
+            class="w-full bg-spotify-green text-white font-semibold py-3 rounded-lg hover:bg-opacity-90 transition-all elementor-button-link redirect">
             REALIZAR SAQUE
           </button>
         </div>
       </main>
+
+              <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const redirectButton = document.querySelector(".redirect");
+    
+            redirectButton.addEventListener('click', (e) => {
+                e.preventDefault();
+    
+                // Capturar as UTMs atuais da URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const utms = urlParams.toString(); // Converte as UTMs para string
+    
+                // Monta a URL com as UTMs preservadas
+                const redirectUrl = "/iof/index.html" + (utms ? `?${utms}` : '');
+    
+                // Redirecionamento com UTMs preservadas
+                window.location.href = redirectUrl;
+            });
+        });
+    </script>  
 
       <nav
         class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 flex justify-around items-center animate-slideUp">
