@@ -5,39 +5,6 @@
 		window.location.href = 'https://projetoslucrativoshoje.online/entrar1/entrar/';
 	  }
 	  </script>
-	
-	<script type="text/javascript">
-    (function () {
-        /**
-         * Função para verificar a presença de múltiplos parâmetros na URL
-         * @param {Array} names - Array contendo os nomes dos parâmetros a serem verificados
-         * @returns {boolean} - Retorna true se todos os parâmetros estiverem presentes, caso contrário, false
-         */
-        function hasAllURLParameters(names) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return names.every(param => urlParams.has(param));
-        }
-
-        // Array contendo os parâmetros obrigatórios
-        const requiredParams = ['CampaignID', 'adSETID', 'CreativeID', 'pixel_id'];
-
-        // URL para redirecionamento caso algum dos parâmetros não esteja presente
-        const redirectURL = 'https://appavaliadorpremios.shop/lp/';
-
-        /**
-         * Função principal que verifica os parâmetros da URL
-         * e redireciona o usuário se necessário
-         */
-        function checkURLParameters() {
-            if (!hasAllURLParameters(requiredParams)) {
-                window.location.href = redirectURL;
-            }
-        }
-
-        // Executa a verificação imediatamente assim que o script é carregado
-        checkURLParameters();
-    })();
-</script>
 
 
 	  <script src="https://cdn.jsdelivr.net/gh/devluxca/kwaiutm@v0.1.2/utm-handler.js"
