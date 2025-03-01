@@ -1,0 +1,303 @@
+.quiz-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.quiz-button:hover {
+  background-color: #e0e0e0;
+}
+
+.quiz-button[data-selected="true"] {
+  background-color: #4A90E2;
+  color: #fff;
+  border-color: #4A90E2;
+}
+
+/* --------------------------------------------- */
+/* Fundo desfocado */
+body.show-blur::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
+  backdrop-filter: blur(10px); /* Desfoque aplicado */
+  z-index: 999; /* Certifique-se de que fique abaixo do pop-up */
+}
+
+/* Estilo do pop-up */
+.popup-container {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9); /* Fundo translúcido */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  text-align: center;
+  padding: 30px;
+  z-index: 1000;
+  width: 75%; /* Largura do pop-up */
+  max-width: 350px; /* Largura máxima do pop-up */
+}
+
+/* Exibir pop-up */
+.popup-container.show {
+  display: block;
+}
+
+
+/* Animação do Lottie */
+.popup-animation {
+  width: 300px;
+  /* Aumente o tamanho da largura */
+  height: 300px;
+  /* Aumente o tamanho da altura */
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.popup-text {
+  font-family: 'Montserrat', sans-serif;
+  color: #4ad812;
+  display: block;
+}
+
+.popup-text.small {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.popup-text.large {
+  font-size: 48px;
+  font-weight: 700;
+  color: #05f719;
+  margin-top: 0;
+}
+
+#boxPix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#botoesPerguntas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.opcao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 75px;
+  border: 2px solid #5b63eb;
+  border-radius: 10px;
+  background-color: #ffff;
+  cursor: pointer;
+  font-size: 12px;
+  color: #ff0000;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.opcao:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: 2px solid #ff0000;
+}
+
+#styledInput {
+  width: 100%;
+  max-width: 400px;
+  height: 45px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  border: 2px solid #5b63eb;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 45px;
+  margin-top: 20px;
+  /* Espaço para ícone */
+}
+
+#styledInput:focus {
+  border-color: #00e1ff;
+  background-color: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+#styledInput::placeholder {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Ícone dentro do input */
+#styledInput:before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Check_green_icon.svg') no-repeat center;
+  background-size: contain;
+}
+
+body.show-blur::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  /* Fundo escurecido */
+  backdrop-filter: blur(10px);
+  /* Desfoque aplicado */
+  z-index: 999;
+  /* Certifique-se de que fique abaixo do pop-up */
+}
+
+/* --------------------------------------------- */
+#boxPix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#botoesPerguntas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.opcao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 75px;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  background-color: #ffff;
+  cursor: pointer;
+  font-size: 12px;
+  color: #ff0000;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.opcao:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: 2px solid #ff0000;
+}
+
+#styledInput {
+  width: 100%;
+  max-width: 400px;
+  height: 45px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 45px;
+  margin-top: 20px;
+  /* Espaço para ícone */
+}
+
+#styledInput:focus {
+  border-color: #ff0000;
+  background-color: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+#styledInput::placeholder {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Ícone dentro do input */
+#styledInput:before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Check_green_icon.svg') no-repeat center;
+  background-size: contain;
+}
+
+.opcao.selected {
+  border: 2px solid #ff0000;
+  background-color: #ff0000;
+  color: #fff;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Efeito de Hover */
+#sacarButton:hover {
+  background-color: #c23616;
+  /* Cor de fundo quando passa o mouse */
+  transform: scale(1.05);
+  /* Leve aumento de tamanho para indicar que é clicável */
+  cursor: pointer;
+  /* Cursor em forma de mãozinha */
+}
+
+/* Efeito de Clique (focus) */
+#sacarButton:focus {
+  outline: none;
+  /* Remove o contorno padrão */
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.6);
+  /* Adiciona uma borda vermelha quando clicado */
+  background-color: #e74c3c;
+  /* Cor de fundo mais intensa no foco */
+}
+
+/* Efeito de Transição Suave */
+#sacarButton {
+  transition: all 0.3s ease;
+  /* Transição suave nos efeitos */
+}
+
+/* ------------------------------------------------------------------------------------------- */

